@@ -1,0 +1,54 @@
+# Student Information System
+# Author: Keerthana.T
+# Description: A simple program to store and display student details.
+
+# Create an empty list to store student details
+students = []
+
+# Function to add student details
+def add_student():
+    print("\n--- Add Student Details ---")
+    name = input("Enter student name: ")
+    reg_no = input("Enter register number: ")
+    dept = input("Enter department: ")
+    marks = float(input("Enter total marks: "))
+    student = {
+        "Name": name,
+        "Register Number": reg_no,
+        "Department": dept,
+        "Marks": marks
+    }
+    students.append(student)
+    print("✅ Student added successfully!")
+
+# Function to display all students
+def display_students():
+    print("\n--- Student Details ---")
+    if len(students) == 0:
+        print("No records found.")
+    else:
+        for s in students:
+            print(f"Name: {s['Name']}")
+            print(f"Register Number: {s['Register Number']}")
+            print(f"Department: {s['Department']}")
+            print(f"Marks: {s['Marks']}")
+            print("----------------------")
+
+# Main menu
+while True:
+    print("\n===== Student Information System =====")
+    print("1. Add Student")
+    print("2. Display Students")
+    print("3. Exit")
+    
+    choice = input("Enter your choice (1/2/3): ")
+
+    if choice == '1':
+        add_student()
+    elif choice == '2':
+        display_students()
+    elif choice == '3':
+        print("Exiting... Thank you for using the Student Information System!")
+        break
+    else:
+        print("Invalid choice! Please try again.")
